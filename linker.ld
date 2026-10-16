@@ -25,5 +25,7 @@ SECTIONS {
         _bss_end = .;
     } > RAM
     
+    /DISCARD/ : { *(.note*) *(.comment) *(.eh_frame*) }
+
     _stack_top = ORIGIN(STACK) + LENGTH(STACK);
 }
